@@ -74,7 +74,8 @@ module "networking" {
       private           = true
       security_group    = "allow-all"                 # must match security_group name above
       route_table       = "default-route"             # must match route_table name above
-      service_endpoints = ["Microsoft.Sql", "Microsoft.Storage"]
+      service_endpoints = ["Microsoft.Sql", "Microsoft.Storage"] # Service endpoints
+      # Example delegation for Azure Database for PostgreSQL Flexible Server
       delegation = {
         name = "psql_delegation"
         service_delegation = {
