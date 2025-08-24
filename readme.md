@@ -1,3 +1,12 @@
+# Azure Network Infrastructure with Terraform
+
+## Introduction
+This project uses **Terraform** to manage Azure network infrastructure in the **West Germany** region. It provisions:
+- A **Virtual Network (VNet)**
+- Two **Subnets**, each with **two Network Security Groups (NSGs)**
+
+The goal is to provide a reusable, scalable infrastructure-as-code template for setting up networking on Azure, suitable for both development and production environments.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
