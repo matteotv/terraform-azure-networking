@@ -87,7 +87,7 @@ module "networking" {
   ]
 
   # Default tags applied to all resources
-  default_tags = {
+  tags = {
     environment = "production"
     app         = "networking"
     # ...additional tags as needed

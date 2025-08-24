@@ -25,7 +25,7 @@ resource "azurerm_virtual_network" "this" {
   resource_group_name = var.resource_group_name
   address_space       = var.vnet_address_space
 
-  tags = merge(var.default_tags, {
+  tags = merge(var.tags, {
     name = "${var.app_name}-${var.azure_env}-vnet"
   })
 }
@@ -75,7 +75,7 @@ resource "azurerm_network_security_group" "this" {
       destination_address_prefix = security_rule.value.destination_address_prefix
     }
   }
-  tags = merge(var.default_tags, {
+  tags = merge(var.tags, {
     name = "${var.app_name}-${var.azure_env}-${each.value.name}-nsg"
   })
 }
@@ -107,7 +107,7 @@ resource "azurerm_route_table" "this" {
       next_hop_in_ip_address = lookup(route.value, "next_hop_in_ip_address", null)
     }
   }
-  tags = merge(var.default_tags, {
+  tags = merge(var.tags, {
     name = "${var.app_name}-${var.azure_env}-${each.key}-rt"
   })
 }
